@@ -113,6 +113,7 @@ echo @%~dp0\art\tools\tcc-win\tcc -I %~dp0\art\tools\tcc-win\include_mingw\winap
 
 echo n | copy /-y demos\*.c 1> nul 2> nul
 
+rem tidy environment
 if "%1"=="tidy" (
     del .temp*.*
     del *.zip
@@ -132,6 +133,14 @@ if "%1"=="tidy" (
     exit /b
 )
 
+rem generate documentation
+if "%1"=="docs" (
+    if not exist "fwk_window.h" call art\tools\split.bat
+    for %%i in (fwk_*.h) do (
+        art\tools\src2doc.exe %%i art\docs\%%~ni.html art\tools\src2doc.css
+    )
+    exit /b
+)
 
 if "%Platform%"=="x64" (
     rem pipeline

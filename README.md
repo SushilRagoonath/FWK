@@ -55,7 +55,7 @@
 - [ ] Maybe: Lighting/PBR pass.
 - [ ] Maybe: VM/ECS/Replication pass.
 - [ ] API: More examples.
-- [ ] API: Documentation. Generator (during cook stage).
+- [ ] API: Documentation. Generator `*`. Generator during cook stage.
 - [ ] API: Review API, clean it up and lock it.
 
 <!--
